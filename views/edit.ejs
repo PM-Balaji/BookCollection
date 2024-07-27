@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Edit</title>
+</head>
+<body>
+    <div class="main">
+        <form style="display: flex; flex-direction: column; gap: 1rem; width: 500px" id="editNotes" action="/submit" method="post">
+          <center><h1 name="title"><%= title %> </h1></center>
+          <input type="text" name="title" value="<%= title %>" hidden="true" >
+          <textarea name="content" rows="10" value="" required> <%= description %> </textarea>
+          <textarea name="content" rows="30" value="" required> <%= note %> </textarea>
+          <button style="width: 150px; height: 50px" type="submit">
+            Submit
+          </button>
+        </form>
+  </div>
+</body>
+</html>

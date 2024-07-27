@@ -1,0 +1,119 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Arial", sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+.main{
+    max-width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.homeform{
+    gap: 2rem;
+}
+
+.title, .homeform{
+    display:flex;
+    justify-content: center;
+}
+
+.eachNote{
+    border-style: solid;
+    border-color: #333;
+    border-width: 2px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;    
+}
+
+img {
+    padding-top: 3rem;
+    padding-left: 20px;
+    height: 300px;
+    width: 220px;
+}
+
+.container, .notes, .update{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container{
+    gap: 2em;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap:1rem
+}
+
+.content > * {
+    margin: 0;
+    padding: 0;
+}
+
+.views{
+    display: flex; 
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.rise-button {
+    padding: 15px 70px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    background-color: rgb(180, 178, 178);
+}
+
+.rise-button:hover {
+    transform: translateY(-0.5cm);
+}
+
+.wrap{
+    white-space: pre-wrap;
+}
+
+#createnotes{
+    display: flex;
+    justify-content: center;
+    padding: 15px 80px;
+}
+
+#deleteButton{
+    background-color: rgba(255, 0, 0, 0.714);
+}
+
+#editButton{
+    background-color: rgba(0, 217, 255, 0.157);
+}
+
+.update{
+    gap: 5rem;
+}
+
+.edit-button, .delete-button {
+    /* padding: 15px 50px; */
+    font-size: 20px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: rgb(180, 178, 178);
+}
+
+.homebutton, .registerbutton, .loginbutton{
+    font-size: 20px;
+    width: 100px;
+}

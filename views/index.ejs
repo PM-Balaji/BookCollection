@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>NOTES</title>
+</head>
+<body>
+    <div class="main">
+        <div class="title">
+            <h1>BOOKS</h1>
+        </div>
+            <% for(let book =0 ;book<books.length;book++){ %>
+            <div class="eachNote">
+                <div class="container">
+                    <div class="image">
+                        <img src="<%=images[book]%>" alt="<%= books[book].title %>"/>
+                    </div>
+                    <div class="content">
+                        <h2 style="padding-left: 5rem; color: #080"><%= books[book].title %></h2>
+                        <h4 style="text-align: right; padding-right: 40px; color:blue">- by <%= books[book].author %></h4>
+                        <p><%= books[book].description %></p>
+                        <div class="views">
+                            <p style="text-align: left; color: green">Views: <%= books[book].views %></p>
+                            <% const retrievedDate = new Date(books[book].date); %>
+                            <% const options = { year: 'numeric', month: 'short', day: 'numeric' }; %>
+                            <% const formattedDate = retrievedDate.toLocaleDateString('en-US', options); %>
+                            <p style="text-align: right; color: green">Last Viewed on : <%= formattedDate %></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="notes">
+                    <form id="notesForm" action="/notes" method="post">
+                        <button class="rise-button" id="viewNotesButton" type="submit" name="notes" value="<%=books[book].title%>" >View Notes</button>
+                    </form>
+                </div>
+                <br>
+                <div class="update">
+                    <form id="editForm" action="/edit" method="post">
+                        <button class="edit-button" id="editButton" type="submit" name="edit" value="<%=books[book].title%>" >EDIT</button>
+                    </form>
+                    <form id="deleteForm" action="/delete" method="post">
+                        <button class="delete-button" id="deleteButton" type="submit" name="delete" value="<%=books[book].title%>" >DELETE</button>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <% } %>        
+        <form style="display: flex; justify-content: center" id="notesCreate" action="/create" method="get">
+            <button  id="createnotes" type="submit" name="create" >CREATE</button>
+        </form>
+        
+    </div>
+</body>
+</html>
